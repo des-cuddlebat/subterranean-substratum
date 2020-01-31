@@ -22,7 +22,7 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 @Mixin(LivingEntity.class)
 public class LivingEntityMixin
 {
-	@Redirect(at = @At(value="FIELD", target = "field_6253", opcode = Opcodes.GETFIELD), method="damage")
+	@Redirect(at = @At(value="FIELD", target = "Lnet/minecraft/entity/LivingEntity;lastDamageTaken:F", opcode = Opcodes.GETFIELD), method="damage")
 	public float getLoggedDamageProxy(LivingEntity self, DamageSource source, float amount)
 	{
 		DamageCooldownComponent comp = Id.Component.DAMAGE_COOLDOWN_COMPONENT.maybeGet(self).orElse(null);
@@ -33,7 +33,7 @@ public class LivingEntityMixin
 		return 0.0f;
 	}
 	
-	@Redirect(at = @At(value="FIELD", target = "field_6253", opcode = Opcodes.PUTFIELD), method="damage")
+	@Redirect(at = @At(value="FIELD", target = "Lnet/minecraft/entity/LivingEntity;lastDamageTaken:F", opcode = Opcodes.PUTFIELD), method="damage")
 	public void setLoggedDamageProxy(LivingEntity self, float value, DamageSource source, float amount)
 	{
 		DamageCooldownComponent comp = Id.Component.DAMAGE_COOLDOWN_COMPONENT.maybeGet(self).orElse(null);
