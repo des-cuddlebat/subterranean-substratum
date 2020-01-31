@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "terrasubst",
+  "version": "${version}",
+
+  "name": "Subterranean Substratum",
+  "description": "Mod with patches and basic features needed by other mods to work as expected.",
+  "authors": [
+    "Me!"
+  ],
+  "contact": {
+    "homepage": "https://cuddlebat.net/",
+    "sources": "https://github.com/des-cuddlebat/subterranean-substratum"
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/terrasubst/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.cuddlebat.terrasubst.Main"
+    ]
+  },
+  "mixins": [
+    "terrasubst.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.7.2",
+    "fabric": "*",
+    "minecraft": "1.15.x"
+  },
+  "suggests": {
+    "flamingo": "*"
+  }
+}
